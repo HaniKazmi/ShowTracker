@@ -14,12 +14,18 @@
 		B95DBB5A152DE52500070302 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B95DBB59152DE52500070302 /* main.m */; };
 		B95DBB5E152DE52500070302 /* TrackerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B95DBB5D152DE52500070302 /* TrackerAppDelegate.m */; };
 		B95DBB61152DE52500070302 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B95DBB5F152DE52500070302 /* MainStoryboard.storyboard */; };
-		B95DBB64152DE52500070302 /* TrackerFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95DBB63152DE52500070302 /* TrackerFirstViewController.m */; };
-		B95DBB66152DE52500070302 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = B95DBB65152DE52500070302 /* first.png */; };
-		B95DBB68152DE52600070302 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95DBB67152DE52500070302 /* first@2x.png */; };
-		B95DBB6B152DE52600070302 /* TrackerSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95DBB6A152DE52600070302 /* TrackerSecondViewController.m */; };
-		B95DBB6D152DE52600070302 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = B95DBB6C152DE52600070302 /* second.png */; };
-		B95DBB6F152DE52600070302 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95DBB6E152DE52600070302 /* second@2x.png */; };
+		B95DBB9D152DFA5500070302 /* 158-wrench-2.png in Resources */ = {isa = PBXBuildFile; fileRef = B95DBB96152DFA5500070302 /* 158-wrench-2.png */; };
+		B95DBB9E152DFA5500070302 /* 83-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = B95DBB97152DFA5500070302 /* 83-calendar.png */; };
+		B95DBB9F152DFA5500070302 /* Calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = B95DBB98152DFA5500070302 /* Calendar.png */; };
+		B95DBBA0152DFA5500070302 /* Calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95DBB99152DFA5500070302 /* Calendar@2x.png */; };
+		B95DBBA1152DFA5500070302 /* Default~iphone (1).png in Resources */ = {isa = PBXBuildFile; fileRef = B95DBB9A152DFA5500070302 /* Default~iphone (1).png */; };
+		B95DBBA2152DFA5500070302 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = B95DBB9B152DFA5500070302 /* list.png */; };
+		B95DBBA3152DFA5500070302 /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B95DBB9C152DFA5500070302 /* list@2x.png */; };
+		B95DBBA8152DFE6B00070302 /* ShowsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95DBBA7152DFE6B00070302 /* ShowsTableViewController.m */; };
+		B95DBBB5152DFF9000070302 /* UpcomingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95DBBB4152DFF9000070302 /* UpcomingTableViewController.m */; };
+		B95DBBB8152DFFB600070302 /* ToWatchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95DBBB7152DFFB600070302 /* ToWatchTableViewController.m */; };
+		B95DBBBB152DFFDD00070302 /* FavoriteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95DBBBA152DFFDD00070302 /* FavoriteTableViewController.m */; };
+		B95DBBBE152DFFFF00070302 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95DBBBD152DFFFF00070302 /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,21 +33,30 @@
 		B95DBB4D152DE52500070302 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B95DBB4F152DE52500070302 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B95DBB51152DE52500070302 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		B95DBB55152DE52500070302 /* Showtracker-Info.plist */ = {isa = PBXFileReference; path = "Showtracker-Info.plist"; sourceTree = "<group>"; };
+		B95DBB55152DE52500070302 /* Showtracker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Showtracker-Info.plist"; sourceTree = "<group>"; };
 		B95DBB57152DE52500070302 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B95DBB59152DE52500070302 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B95DBB5B152DE52500070302 /* Showtracker-Prefix.pch */ = {isa = PBXFileReference; path = "Showtracker-Prefix.pch"; sourceTree = "<group>"; };
-		B95DBB5C152DE52500070302 /* TrackerAppDelegate.h */ = {isa = PBXFileReference; path = TrackerAppDelegate.h; sourceTree = "<group>"; };
+		B95DBB5B152DE52500070302 /* Showtracker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Showtracker-Prefix.pch"; sourceTree = "<group>"; };
+		B95DBB5C152DE52500070302 /* TrackerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrackerAppDelegate.h; sourceTree = "<group>"; };
 		B95DBB5D152DE52500070302 /* TrackerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrackerAppDelegate.m; sourceTree = "<group>"; };
 		B95DBB60152DE52500070302 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		B95DBB62152DE52500070302 /* TrackerFirstViewController.h */ = {isa = PBXFileReference; path = TrackerFirstViewController.h; sourceTree = "<group>"; };
-		B95DBB63152DE52500070302 /* TrackerFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrackerFirstViewController.m; sourceTree = "<group>"; };
-		B95DBB65152DE52500070302 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		B95DBB67152DE52500070302 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		B95DBB69152DE52600070302 /* TrackerSecondViewController.h */ = {isa = PBXFileReference; path = TrackerSecondViewController.h; sourceTree = "<group>"; };
-		B95DBB6A152DE52600070302 /* TrackerSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrackerSecondViewController.m; sourceTree = "<group>"; };
-		B95DBB6C152DE52600070302 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		B95DBB6E152DE52600070302 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		B95DBB96152DFA5500070302 /* 158-wrench-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "158-wrench-2.png"; sourceTree = "<group>"; };
+		B95DBB97152DFA5500070302 /* 83-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83-calendar.png"; sourceTree = "<group>"; };
+		B95DBB98152DFA5500070302 /* Calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Calendar.png; sourceTree = "<group>"; };
+		B95DBB99152DFA5500070302 /* Calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calendar@2x.png"; sourceTree = "<group>"; };
+		B95DBB9A152DFA5500070302 /* Default~iphone (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone (1).png"; sourceTree = "<group>"; };
+		B95DBB9B152DFA5500070302 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
+		B95DBB9C152DFA5500070302 /* list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list@2x.png"; sourceTree = "<group>"; };
+		B95DBBA6152DFE6B00070302 /* ShowsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowsTableViewController.h; path = ViewControllers/Shows/ShowsTableViewController.h; sourceTree = "<group>"; };
+		B95DBBA7152DFE6B00070302 /* ShowsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowsTableViewController.m; path = ViewControllers/Shows/ShowsTableViewController.m; sourceTree = "<group>"; };
+		B95DBBB3152DFF9000070302 /* UpcomingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpcomingTableViewController.h; path = ViewControllers/Upcoming/UpcomingTableViewController.h; sourceTree = "<group>"; };
+		B95DBBB4152DFF9000070302 /* UpcomingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpcomingTableViewController.m; path = ViewControllers/Upcoming/UpcomingTableViewController.m; sourceTree = "<group>"; };
+		B95DBBB6152DFFB600070302 /* ToWatchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToWatchTableViewController.h; path = ViewControllers/ToWatch/ToWatchTableViewController.h; sourceTree = "<group>"; };
+		B95DBBB7152DFFB600070302 /* ToWatchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToWatchTableViewController.m; path = ViewControllers/ToWatch/ToWatchTableViewController.m; sourceTree = "<group>"; };
+		B95DBBB9152DFFDD00070302 /* FavoriteTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoriteTableViewController.h; path = ViewControllers/Favorite/FavoriteTableViewController.h; sourceTree = "<group>"; };
+		B95DBBBA152DFFDD00070302 /* FavoriteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoriteTableViewController.m; path = ViewControllers/Favorite/FavoriteTableViewController.m; sourceTree = "<group>"; };
+		B95DBBBC152DFFFF00070302 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = ViewControllers/Settings/SettingsViewController.h; sourceTree = "<group>"; };
+		B95DBBBD152DFFFF00070302 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = ViewControllers/Settings/SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				B95DBB53152DE52500070302 /* Showtracker */,
+				B95DBB75152DE6DF00070302 /* Resources */,
 				B95DBB4C152DE52500070302 /* Frameworks */,
 				B95DBB4A152DE52500070302 /* Products */,
 			);
@@ -88,17 +104,10 @@
 		B95DBB53152DE52500070302 /* Showtracker */ = {
 			isa = PBXGroup;
 			children = (
+				B95DBBA4152DFDEE00070302 /* ViewControllers */,
 				B95DBB5C152DE52500070302 /* TrackerAppDelegate.h */,
 				B95DBB5D152DE52500070302 /* TrackerAppDelegate.m */,
 				B95DBB5F152DE52500070302 /* MainStoryboard.storyboard */,
-				B95DBB62152DE52500070302 /* TrackerFirstViewController.h */,
-				B95DBB63152DE52500070302 /* TrackerFirstViewController.m */,
-				B95DBB65152DE52500070302 /* first.png */,
-				B95DBB67152DE52500070302 /* first@2x.png */,
-				B95DBB69152DE52600070302 /* TrackerSecondViewController.h */,
-				B95DBB6A152DE52600070302 /* TrackerSecondViewController.m */,
-				B95DBB6C152DE52600070302 /* second.png */,
-				B95DBB6E152DE52600070302 /* second@2x.png */,
 				B95DBB54152DE52500070302 /* Supporting Files */,
 			);
 			path = Showtracker;
@@ -113,6 +122,86 @@
 				B95DBB5B152DE52500070302 /* Showtracker-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B95DBB75152DE6DF00070302 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B95DBB95152DFA5500070302 /* icons */,
+			);
+			name = Resources;
+			path = Showtracker;
+			sourceTree = "<group>";
+		};
+		B95DBB95152DFA5500070302 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				B95DBB96152DFA5500070302 /* 158-wrench-2.png */,
+				B95DBB97152DFA5500070302 /* 83-calendar.png */,
+				B95DBB98152DFA5500070302 /* Calendar.png */,
+				B95DBB99152DFA5500070302 /* Calendar@2x.png */,
+				B95DBB9A152DFA5500070302 /* Default~iphone (1).png */,
+				B95DBB9B152DFA5500070302 /* list.png */,
+				B95DBB9C152DFA5500070302 /* list@2x.png */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
+		B95DBBA4152DFDEE00070302 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B95DBBB2152DFF5200070302 /* Settings */,
+				B95DBBB1152DFF4000070302 /* Favorites */,
+				B95DBBB0152DFF1200070302 /* To Watch */,
+				B95DBBA9152DFEB900070302 /* Upcoming */,
+				B95DBBA5152DFE1000070302 /* Shows */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B95DBBA5152DFE1000070302 /* Shows */ = {
+			isa = PBXGroup;
+			children = (
+				B95DBBA6152DFE6B00070302 /* ShowsTableViewController.h */,
+				B95DBBA7152DFE6B00070302 /* ShowsTableViewController.m */,
+			);
+			name = Shows;
+			sourceTree = "<group>";
+		};
+		B95DBBA9152DFEB900070302 /* Upcoming */ = {
+			isa = PBXGroup;
+			children = (
+				B95DBBB3152DFF9000070302 /* UpcomingTableViewController.h */,
+				B95DBBB4152DFF9000070302 /* UpcomingTableViewController.m */,
+			);
+			name = Upcoming;
+			sourceTree = "<group>";
+		};
+		B95DBBB0152DFF1200070302 /* To Watch */ = {
+			isa = PBXGroup;
+			children = (
+				B95DBBB6152DFFB600070302 /* ToWatchTableViewController.h */,
+				B95DBBB7152DFFB600070302 /* ToWatchTableViewController.m */,
+			);
+			name = "To Watch";
+			sourceTree = "<group>";
+		};
+		B95DBBB1152DFF4000070302 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				B95DBBB9152DFFDD00070302 /* FavoriteTableViewController.h */,
+				B95DBBBA152DFFDD00070302 /* FavoriteTableViewController.m */,
+			);
+			name = Favorites;
+			sourceTree = "<group>";
+		};
+		B95DBBB2152DFF5200070302 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B95DBBBC152DFFFF00070302 /* SettingsViewController.h */,
+				B95DBBBD152DFFFF00070302 /* SettingsViewController.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,10 +256,13 @@
 			files = (
 				B95DBB58152DE52500070302 /* InfoPlist.strings in Resources */,
 				B95DBB61152DE52500070302 /* MainStoryboard.storyboard in Resources */,
-				B95DBB66152DE52500070302 /* first.png in Resources */,
-				B95DBB68152DE52600070302 /* first@2x.png in Resources */,
-				B95DBB6D152DE52600070302 /* second.png in Resources */,
-				B95DBB6F152DE52600070302 /* second@2x.png in Resources */,
+				B95DBB9D152DFA5500070302 /* 158-wrench-2.png in Resources */,
+				B95DBB9E152DFA5500070302 /* 83-calendar.png in Resources */,
+				B95DBB9F152DFA5500070302 /* Calendar.png in Resources */,
+				B95DBBA0152DFA5500070302 /* Calendar@2x.png in Resources */,
+				B95DBBA1152DFA5500070302 /* Default~iphone (1).png in Resources */,
+				B95DBBA2152DFA5500070302 /* list.png in Resources */,
+				B95DBBA3152DFA5500070302 /* list@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,8 +275,11 @@
 			files = (
 				B95DBB5A152DE52500070302 /* main.m in Sources */,
 				B95DBB5E152DE52500070302 /* TrackerAppDelegate.m in Sources */,
-				B95DBB64152DE52500070302 /* TrackerFirstViewController.m in Sources */,
-				B95DBB6B152DE52600070302 /* TrackerSecondViewController.m in Sources */,
+				B95DBBA8152DFE6B00070302 /* ShowsTableViewController.m in Sources */,
+				B95DBBB5152DFF9000070302 /* UpcomingTableViewController.m in Sources */,
+				B95DBBB8152DFFB600070302 /* ToWatchTableViewController.m in Sources */,
+				B95DBBBB152DFFDD00070302 /* FavoriteTableViewController.m in Sources */,
+				B95DBBBE152DFFFF00070302 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

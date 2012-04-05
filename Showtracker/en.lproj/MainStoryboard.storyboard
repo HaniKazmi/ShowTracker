@@ -32,7 +32,7 @@
                     <navigationItem key="navigationItem" title="To Watch" id="xb2-qD-maz"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="2447" y="-1329"/>
+            <point key="canvasLocation" x="1131" y="-725"/>
         </scene>
         <scene sceneID="QdE-ZM-PnT">
             <objects>
@@ -66,7 +66,7 @@
         <scene sceneID="5yc-ax-N0R">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vnP-M2-dpN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="euh-ZJ-tcS" customClass="FavoriteTableViewController" sceneMemberID="viewController">
+                <viewController id="euh-ZJ-tcS" customClass="SettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vOO-de-b77">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -75,7 +75,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="vsi-Au-Bqi"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2419" y="1624"/>
+            <point key="canvasLocation" x="999" y="1052"/>
         </scene>
         <scene sceneID="Ykn-lg-3NC">
             <objects>
@@ -91,14 +91,14 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="1913" y="1624"/>
+            <point key="canvasLocation" x="485" y="1044"/>
         </scene>
         <scene sceneID="15">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
                 <tabBarController id="4" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="I1c-bG-D6Z"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="5">
                         <rect key="frame" x="0.0" y="431" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -115,7 +115,7 @@
                     </connections>
                 </tabBarController>
             </objects>
-            <point key="canvasLocation" x="-240" y="212"/>
+            <point key="canvasLocation" x="152" y="212"/>
         </scene>
         <scene sceneID="VhN-7w-Oua">
             <objects>
@@ -153,7 +153,7 @@
                     <navigationItem key="navigationItem" title="Shows" id="IGg-ty-2rm"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="2386" y="177"/>
+            <point key="canvasLocation" x="2453" y="169"/>
         </scene>
         <scene sceneID="7yc-NS-BJw">
             <objects>
@@ -241,7 +241,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="1921" y="-1321"/>
+            <point key="canvasLocation" x="613" y="-713"/>
         </scene>
         <scene sceneID="PCA-jP-NPM">
             <objects>
@@ -270,20 +270,6 @@
         <image name="Calendar@2x.png" width="60" height="60"/>
         <image name="list.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="FavoriteTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FavoriteTableViewController.h"/>
-        </class>
-        <class className="ShowsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShowsTableViewController.h"/>
-        </class>
-        <class className="ToWatchTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ToWatchTableViewController.h"/>
-        </class>
-        <class className="UpcomingTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UpcomingTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

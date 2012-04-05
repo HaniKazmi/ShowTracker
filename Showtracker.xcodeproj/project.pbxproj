@@ -231,6 +231,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Hani Kazmi";
 			};
 			buildConfigurationList = B95DBB43152DE52400070302 /* Build configuration list for PBXProject "Showtracker" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -391,6 +392,7 @@
 				B95DBB74152DE52600070302 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

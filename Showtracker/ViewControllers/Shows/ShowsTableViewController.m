@@ -7,9 +7,12 @@
 //
 
 #import "ShowsTableViewController.h"
+#import "FileHandling.h"
 
 
 @implementation ShowsTableViewController
+@synthesize ShowsSearchBar;
+@synthesize textBox;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -30,19 +33,30 @@
 
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
+- (void)viewDidLoad //Any additional setup after loading view
 {
-    [super viewDidLoad];
-
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    //Create initial directories
+    [FileHandling createDirs:@"Cache/Shows"];
+    [FileHandling createDirs:@"Cache/Episodes"];
+    [FileHandling createDirs:@"Banner"];
+    [FileHandling createDirs:@"Episode"];
+    
+    //Create initial files
+    [FileHandling createPaths:@"shows.txt"];
+    [FileHandling createPaths:@"reminder.txt"];
+    [super viewDidLoad];    
 }
 
 - (void)viewDidUnload
 {
+    [self setShowsSearchBar:nil];
+    [self setTextBox:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

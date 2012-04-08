@@ -125,9 +125,18 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textField key="tableHeaderView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="9Bh-Rj-cVV">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="oXm-DN-XGS" id="pGa-4q-PEr"/>
+                            </connections>
+                        </textField>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="V7C-qi-QP0" style="IBUITableViewCellStyleDefault" id="dj5-wq-xPR">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="53" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -157,6 +166,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textBox" destination="9Bh-Rj-cVV" id="Rlj-w4-R43"/>
+                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="2453" y="169"/>
@@ -164,21 +176,18 @@
         <scene sceneID="LgV-iM-Mwy">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6oe-hl-y57" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="mzk-yJ-tPu" sceneMemberID="viewController">
+                <viewController id="mzk-yJ-tPu" customClass="AddShowsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EUk-hk-lRD">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Search" id="d3S-h9-E8a">
+                            <searchBar contentMode="redraw" placeholder="Search" id="jfi-TG-2LU">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
+                                <color key="tintColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="mzk-yJ-tPu" id="9Az-cz-Ssc"/>
+                                    <outlet property="delegate" destination="mzk-yJ-tPu" id="tHt-gR-z5o"/>
                                 </connections>
                             </searchBar>
                         </subviews>
@@ -188,13 +197,12 @@
                         <barButtonItem key="backBarButtonItem" title="Why" id="02d-fx-MpO"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchDisplayController" destination="maK-dX-X81" id="fk8-N6-0XK"/>
+                        <outlet property="AddShowsSearchDisplayController" destination="maK-dX-X81" id="ZGx-cr-33K"/>
                     </connections>
                 </viewController>
-                <searchDisplayController id="maK-dX-X81">
+                <searchDisplayController searchResultsTitle="Shows" id="maK-dX-X81">
                     <connections>
-                        <outlet property="delegate" destination="mzk-yJ-tPu" id="vZg-cB-LF3"/>
-                        <outlet property="searchBar" destination="d3S-h9-E8a" id="36s-6X-6F6"/>
+                        <outlet property="delegate" destination="mzk-yJ-tPu" id="hIY-yW-8t4"/>
                         <outlet property="searchContentsController" destination="mzk-yJ-tPu" id="jCS-gF-pRD"/>
                         <outlet property="searchResultsDataSource" destination="mzk-yJ-tPu" id="Hny-xP-Xsn"/>
                         <outlet property="searchResultsDelegate" destination="mzk-yJ-tPu" id="thM-Qk-VhE"/>
@@ -319,6 +327,12 @@
         <image name="list.png" width="30" height="30"/>
     </resources>
     <classes>
+        <class className="AddShowsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddShowsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="AddShowsSearchDisplayController" candidateClass="UISearchDisplayController"/>
+            </relationships>
+        </class>
         <class className="FavoriteTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FavoriteTableViewController.h"/>
         </class>
@@ -327,6 +341,10 @@
         </class>
         <class className="ShowsTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ShowsTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ShowsSearchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="textBox" candidateClass="UITextField"/>
+            </relationships>
         </class>
         <class className="ToWatchTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ToWatchTableViewController.h"/>

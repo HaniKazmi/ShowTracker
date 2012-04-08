@@ -26,6 +26,8 @@
 		B95DBBB8152DFFB600070302 /* ToWatchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95DBBB7152DFFB600070302 /* ToWatchTableViewController.m */; };
 		B95DBBBB152DFFDD00070302 /* FavoriteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95DBBBA152DFFDD00070302 /* FavoriteTableViewController.m */; };
 		B95DBBBE152DFFFF00070302 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95DBBBD152DFFFF00070302 /* SettingsViewController.m */; };
+		B9877A771531B6BE005D68F3 /* FileHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = B9877A761531B6BE005D68F3 /* FileHandling.m */; };
+		B99FDF9B152F1EB7004ADC59 /* AddShowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B99FDF9A152F1EB7004ADC59 /* AddShowsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,10 @@
 		B95DBBBA152DFFDD00070302 /* FavoriteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = FavoriteTableViewController.m; path = ViewControllers/Favorite/FavoriteTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B95DBBBC152DFFFF00070302 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SettingsViewController.h; path = ViewControllers/Settings/SettingsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B95DBBBD152DFFFF00070302 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = SettingsViewController.m; path = ViewControllers/Settings/SettingsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		B9877A751531B6BE005D68F3 /* FileHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileHandling.h; path = ViewControllers/Shows/FileHandling.h; sourceTree = "<group>"; };
+		B9877A761531B6BE005D68F3 /* FileHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileHandling.m; path = ViewControllers/Shows/FileHandling.m; sourceTree = "<group>"; };
+		B99FDF99152F1EB7004ADC59 /* AddShowsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddShowsViewController.h; path = ViewControllers/Shows/AddShowsViewController.h; sourceTree = "<group>"; };
+		B99FDF9A152F1EB7004ADC59 /* AddShowsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddShowsViewController.m; path = ViewControllers/Shows/AddShowsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,8 +168,12 @@
 		B95DBBA5152DFE1000070302 /* Shows */ = {
 			isa = PBXGroup;
 			children = (
+				B99FDF99152F1EB7004ADC59 /* AddShowsViewController.h */,
+				B99FDF9A152F1EB7004ADC59 /* AddShowsViewController.m */,
 				B95DBBA6152DFE6B00070302 /* ShowsTableViewController.h */,
 				B95DBBA7152DFE6B00070302 /* ShowsTableViewController.m */,
+				B9877A751531B6BE005D68F3 /* FileHandling.h */,
+				B9877A761531B6BE005D68F3 /* FileHandling.m */,
 			);
 			name = Shows;
 			sourceTree = "<group>";
@@ -281,6 +291,8 @@
 				B95DBBB8152DFFB600070302 /* ToWatchTableViewController.m in Sources */,
 				B95DBBBB152DFFDD00070302 /* FavoriteTableViewController.m in Sources */,
 				B95DBBBE152DFFFF00070302 /* SettingsViewController.m in Sources */,
+				B99FDF9B152F1EB7004ADC59 /* AddShowsViewController.m in Sources */,
+				B9877A771531B6BE005D68F3 /* FileHandling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

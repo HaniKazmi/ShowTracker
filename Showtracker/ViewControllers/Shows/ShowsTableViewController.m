@@ -8,11 +8,10 @@
 
 #import "ShowsTableViewController.h"
 #import "FileHandling.h"
+#import "XMLReader.h"
 
 
 @implementation ShowsTableViewController
-@synthesize ShowsSearchBar;
-@synthesize textBox;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -42,6 +41,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     //Create initial directories
+    
     [FileHandling createDirs:@"Cache/Shows"];
     [FileHandling createDirs:@"Cache/Episodes"];
     [FileHandling createDirs:@"Banner"];
@@ -50,13 +50,13 @@
     //Create initial files
     [FileHandling createPaths:@"shows.txt"];
     [FileHandling createPaths:@"reminder.txt"];
+    
     [super viewDidLoad];    
 }
 
 - (void)viewDidUnload
 {
-    [self setShowsSearchBar:nil];
-    [self setTextBox:nil];
+
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -69,9 +69,15 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: @"http://www.thetvdb.com/api/GetSeries.php?seriesname=Lost"]];
+    NSData *xmlfile = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSDictionary *xmlDictionary = [XMLReader dictionaryForXMLData:xmlfile];
+    NSLog(@"%@", xmlDictionary);
+    
     [super viewDidAppear:animated];
 }
-
+    	
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];

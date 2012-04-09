@@ -11,7 +11,4 @@
 
 @interface ShowsTableViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UISearchBar *ShowsSearchBar;
-@property (weak, nonatomic) IBOutlet UITextField *textBox;
-
 @end

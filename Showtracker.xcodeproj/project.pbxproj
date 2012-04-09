@@ -243,7 +243,7 @@
 				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Hani Kazmi";
 			};
-			buildConfigurationList = B95DBB43152DE52400070302 /* Build configuration list for PBXProject "Showtracker" */;
+			buildConfigurationList = B95DBB43152DE52400070302 /* Build configuration list for PBXProject "SHOWTRACKER" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -388,7 +388,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B95DBB43152DE52400070302 /* Build configuration list for PBXProject "Showtracker" */ = {
+		B95DBB43152DE52400070302 /* Build configuration list for PBXProject "SHOWTRACKER" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B95DBB70152DE52600070302 /* Debug */,

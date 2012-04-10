@@ -57,8 +57,8 @@
     NSString *path = [docsDir stringByAppendingPathComponent:showsFile];
     NSData *xmlData = [NSData dataWithContentsOfFile:path];
     showsDictionary = [XMLReader dictionaryForXMLData:xmlData];
-    NSLog(@"%@", showsDictionary);
     
+    //Populate table
     [self.tableView reloadData];
     
     [super viewDidLoad];    
@@ -109,28 +109,27 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [[showsDictionary retrieveForPath:@"statuses.status"] count];
+    return [[showsDictionary retrieveForPath:@"Data.Show"] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"StatusCell";
+    // Extract show dictionary
+    NSDictionary *show = [showsDictionary retrieveForPath:[NSString stringWithFormat:@"Data.Show.%d",indexPath.row]];
     
+    static NSString *CellIdentifier = @"show";
+    
+    //Cell settings
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.textLabel.font = [UIFont systemFontOfSize:12];
+        cell.textLabel.font = [UIFont boldSystemFontOfSize:20];
         cell.textLabel.numberOfLines = 2;  
-        cell.detailTextLabel.font = [UIFont systemFontOfSize:10];
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-    }
+        }
     
-    // Configure the cell...	
-    NSDictionary *status = [showsDictionary retrieveForPath:[NSString stringWithFormat:@"statuses.status.%d", indexPath.row]];
-    
-    cell.textLabel.text=[status objectForKey:@"text"];
-    cell.detailTextLabel.text = [status objectForKey:@"created_at"];
-    
+    // Populate cell	
+    cell.textLabel.text=[show objectForKey:@"SeriesName"];
     
     return cell;
 }
@@ -138,7 +137,7 @@
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
+{   
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }

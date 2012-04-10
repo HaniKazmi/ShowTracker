@@ -59,9 +59,10 @@
     showsDictionary = [XMLReader dictionaryForXMLData:xmlData];
     NSLog(@"%@", showsDictionary);
     
+    [self.tableView reloadData];
     
     [super viewDidLoad];    
-}
+}	
 
 - (void)viewDidUnload
 {
@@ -101,28 +102,35 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [[showsDictionary retrieveForPath:@"statuses.status"] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"StatusCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.textLabel.font = [UIFont systemFontOfSize:12];
+        cell.textLabel.numberOfLines = 2;  
+        cell.detailTextLabel.font = [UIFont systemFontOfSize:10];
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     }
     
-    // Configure the cell...
+    // Configure the cell...	
+    NSDictionary *status = [showsDictionary retrieveForPath:[NSString stringWithFormat:@"statuses.status.%d", indexPath.row]];
+    
+    cell.textLabel.text=[status objectForKey:@"text"];
+    cell.detailTextLabel.text = [status objectForKey:@"created_at"];
+    
     
     return cell;
 }

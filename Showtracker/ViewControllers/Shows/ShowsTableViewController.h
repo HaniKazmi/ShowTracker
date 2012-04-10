@@ -8,17 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-//Directory Locations
+NSDictionary *showsDictionary;
+
+//Directory locations
 NSString const
 *showsFile = @"shows.txt",
 *reminderFile = @"reminder.txt",
 *showsXMLDir = @"Cache/Shows",
 *episodesXMLDir = @"Cache/Episodes",
-*bannerDir = @"Bannar",
+*bannerDir = @"Banner",
 *episodesDir = @"Episode";
-
-NSDictionary *showsDictionary;
-
 
 @interface ShowsTableViewController : UITableViewController 
     

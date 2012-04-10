@@ -38,18 +38,27 @@
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    //Determine Documents Directory location
+    [FileHandling docsLocation];
     
     //Create initial directories
-    
-    [FileHandling createDirs:@"Cache/Shows"];
-    [FileHandling createDirs:@"Cache/Episodes"];
-    [FileHandling createDirs:@"Banner"];
-    [FileHandling createDirs:@"Episode"];
+    [FileHandling createDirs:showsXMLDir];
+    [FileHandling createDirs:episodesXMLDir];
+    [FileHandling createDirs:bannerDir];
+    [FileHandling createDirs:episodesDir];
     
     //Create initial files
-    [FileHandling createPaths:@"shows.txt"];
-    [FileHandling createPaths:@"reminder.txt"];
+    [FileHandling createFiles:showsFile];
+    [FileHandling createFiles:reminderFile];
+    
+    //Parse shows.txt
+    NSString *path = [docsDir stringByAppendingPathComponent:showsFile];
+    NSData *xmlData = [NSData dataWithContentsOfFile:path];
+    showsDictionary = [XMLReader dictionaryForXMLData:xmlData];
+    NSLog(@"%@", showsDictionary);
+    
     
     [super viewDidLoad];    
 }
@@ -68,13 +77,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated
-{
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: @"http://www.thetvdb.com/api/GetSeries.php?seriesname=Lost"]];
-    NSData *xmlfile = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    NSDictionary *xmlDictionary = [XMLReader dictionaryForXMLData:xmlfile];
-    NSLog(@"%@", xmlDictionary);
-    
+{    	
     [super viewDidAppear:animated];
 }
     	

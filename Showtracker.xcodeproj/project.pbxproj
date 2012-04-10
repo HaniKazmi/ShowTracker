@@ -26,7 +26,12 @@
 		B95DBBB8152DFFB600070302 /* ToWatchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95DBBB7152DFFB600070302 /* ToWatchTableViewController.m */; };
 		B95DBBBB152DFFDD00070302 /* FavoriteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95DBBBA152DFFDD00070302 /* FavoriteTableViewController.m */; };
 		B95DBBBE152DFFFF00070302 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95DBBBD152DFFFF00070302 /* SettingsViewController.m */; };
-		B9877A771531B6BE005D68F3 /* FileHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = B9877A761531B6BE005D68F3 /* FileHandling.m */; };
+		B98CCB8415333B3400D0ACB4 /* FileHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = B98CCB8115333B3400D0ACB4 /* FileHandling.m */; };
+		B98CCB8515333B3400D0ACB4 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B98CCB8315333B3400D0ACB4 /* XMLReader.m */; };
+		B992800D153443380009CDC2 /* Icon (1).png in Resources */ = {isa = PBXBuildFile; fileRef = B992800C153443380009CDC2 /* Icon (1).png */; };
+		B9928010153443400009CDC2 /* Icon@2x (1).png in Resources */ = {isa = PBXBuildFile; fileRef = B992800F153443400009CDC2 /* Icon@2x (1).png */; };
+		B9928012153443460009CDC2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9928011153443460009CDC2 /* Default@2x.png */; };
+		B9928014153443580009CDC2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B9928013153443580009CDC2 /* Default.png */; };
 		B99FDF9B152F1EB7004ADC59 /* AddShowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B99FDF9A152F1EB7004ADC59 /* AddShowsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -59,8 +64,14 @@
 		B95DBBBA152DFFDD00070302 /* FavoriteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = FavoriteTableViewController.m; path = ViewControllers/Favorite/FavoriteTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B95DBBBC152DFFFF00070302 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SettingsViewController.h; path = ViewControllers/Settings/SettingsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B95DBBBD152DFFFF00070302 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = SettingsViewController.m; path = ViewControllers/Settings/SettingsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		B9877A751531B6BE005D68F3 /* FileHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileHandling.h; path = ViewControllers/Shows/FileHandling.h; sourceTree = "<group>"; };
-		B9877A761531B6BE005D68F3 /* FileHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileHandling.m; path = ViewControllers/Shows/FileHandling.m; sourceTree = "<group>"; };
+		B98CCB8015333B3400D0ACB4 /* FileHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileHandling.h; path = Resources/FileHandling.h; sourceTree = "<group>"; };
+		B98CCB8115333B3400D0ACB4 /* FileHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileHandling.m; path = Resources/FileHandling.m; sourceTree = "<group>"; };
+		B98CCB8215333B3400D0ACB4 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLReader.h; path = Resources/XMLReader.h; sourceTree = "<group>"; };
+		B98CCB8315333B3400D0ACB4 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLReader.m; path = Resources/XMLReader.m; sourceTree = "<group>"; };
+		B992800C153443380009CDC2 /* Icon (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon (1).png"; sourceTree = "<group>"; };
+		B992800F153443400009CDC2 /* Icon@2x (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x (1).png"; sourceTree = "<group>"; };
+		B9928011153443460009CDC2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B9928013153443580009CDC2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B99FDF99152F1EB7004ADC59 /* AddShowsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddShowsViewController.h; path = ViewControllers/Shows/AddShowsViewController.h; sourceTree = "<group>"; };
 		B99FDF9A152F1EB7004ADC59 /* AddShowsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddShowsViewController.m; path = ViewControllers/Shows/AddShowsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +93,10 @@
 		B95DBB3E152DE52400070302 = {
 			isa = PBXGroup;
 			children = (
+				B9928013153443580009CDC2 /* Default.png */,
+				B9928011153443460009CDC2 /* Default@2x.png */,
+				B992800F153443400009CDC2 /* Icon@2x (1).png */,
+				B992800C153443380009CDC2 /* Icon (1).png */,
 				B95DBB53152DE52500070302 /* Showtracker */,
 				B95DBB75152DE6DF00070302 /* Resources */,
 				B95DBB4C152DE52500070302 /* Frameworks */,
@@ -122,6 +137,10 @@
 		B95DBB54152DE52500070302 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B98CCB8015333B3400D0ACB4 /* FileHandling.h */,
+				B98CCB8115333B3400D0ACB4 /* FileHandling.m */,
+				B98CCB8215333B3400D0ACB4 /* XMLReader.h */,
+				B98CCB8315333B3400D0ACB4 /* XMLReader.m */,
 				B95DBB55152DE52500070302 /* Showtracker-Info.plist */,
 				B95DBB56152DE52500070302 /* InfoPlist.strings */,
 				B95DBB59152DE52500070302 /* main.m */,
@@ -172,8 +191,6 @@
 				B99FDF9A152F1EB7004ADC59 /* AddShowsViewController.m */,
 				B95DBBA6152DFE6B00070302 /* ShowsTableViewController.h */,
 				B95DBBA7152DFE6B00070302 /* ShowsTableViewController.m */,
-				B9877A751531B6BE005D68F3 /* FileHandling.h */,
-				B9877A761531B6BE005D68F3 /* FileHandling.m */,
 			);
 			name = Shows;
 			sourceTree = "<group>";
@@ -243,7 +260,7 @@
 				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Hani Kazmi";
 			};
-			buildConfigurationList = B95DBB43152DE52400070302 /* Build configuration list for PBXProject "SHOWTRACKER" */;
+			buildConfigurationList = B95DBB43152DE52400070302 /* Build configuration list for PBXProject "Showtracker" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -274,6 +291,10 @@
 				B95DBBA1152DFA5500070302 /* Default~iphone (1).png in Resources */,
 				B95DBBA2152DFA5500070302 /* list.png in Resources */,
 				B95DBBA3152DFA5500070302 /* list@2x.png in Resources */,
+				B992800D153443380009CDC2 /* Icon (1).png in Resources */,
+				B9928010153443400009CDC2 /* Icon@2x (1).png in Resources */,
+				B9928012153443460009CDC2 /* Default@2x.png in Resources */,
+				B9928014153443580009CDC2 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +313,8 @@
 				B95DBBBB152DFFDD00070302 /* FavoriteTableViewController.m in Sources */,
 				B95DBBBE152DFFFF00070302 /* SettingsViewController.m in Sources */,
 				B99FDF9B152F1EB7004ADC59 /* AddShowsViewController.m in Sources */,
-				B9877A771531B6BE005D68F3 /* FileHandling.m in Sources */,
+				B98CCB8415333B3400D0ACB4 /* FileHandling.m in Sources */,
+				B98CCB8515333B3400D0ACB4 /* XMLReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,7 +410,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B95DBB43152DE52400070302 /* Build configuration list for PBXProject "SHOWTRACKER" */ = {
+		B95DBB43152DE52400070302 /* Build configuration list for PBXProject "Showtracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B95DBB70152DE52600070302 /* Debug */,

@@ -57,12 +57,63 @@
     NSString *path = [docsDir stringByAppendingPathComponent:showsFile];
     NSData *xmlData = [NSData dataWithContentsOfFile:path];
     showsDictionary = [XMLReader dictionaryForXMLData:xmlData];
+    	
+    
+    //Determine Number of letters for index
+    NSDictionary *childShowsDictionary;
+    lettersinDictionary = [[NSMutableArray alloc] init];
+    numberOfEachLetter = [[NSMutableArray alloc] init];
+    rowIndexOfeachLetter = [[NSMutableArray alloc] init];
+    int currentCountofLetter = 1;
+    int rowOfCurrentLetter = 0;
+    
+    
+    NSString *seriesName;
+    //Loop through and extract series names
+    for (int i = 0; i < [[showsDictionary retrieveForPath:@"Data.Show"] count]; i++) {
+        
+        childShowsDictionary = [showsDictionary retrieveForPath:[NSString stringWithFormat:@"Data.Show.%i",i]];
+        seriesName = [childShowsDictionary objectForKey:@"SeriesName"];
+        //Extract first character from name
+        seriesName =[seriesName substringToIndex:1];
+        
+        //Check if letter is in array
+        if (![lettersinDictionary containsObject:seriesName]) {
+            
+            
+            //If not in array, add letter and set the number of letters to one
+            [lettersinDictionary addObject: seriesName];
+            
+            //Skip above process on first loop, as letters haven't finished counting
+            if (i != 0) {
+                NSNumber *numberOfEachLetterWrapper = [NSNumber numberWithInteger:currentCountofLetter];
+                [numberOfEachLetter addObject:numberOfEachLetterWrapper];
+                currentCountofLetter = 1;
+            }
+            
+            //Keep count of position of first occurence of the letter
+            NSNumber *rowIndexOfEachLetterWrapper = [NSNumber numberWithInteger:rowOfCurrentLetter];
+            [rowIndexOfeachLetter addObject:rowIndexOfEachLetterWrapper];
+            rowOfCurrentLetter ++;
+        }
+        
+        //Increment counters if new letter not found
+        else {
+            currentCountofLetter ++; 
+            rowOfCurrentLetter ++;
+        }
+    }
+    
+    //As i = 0 was skipped, fill in the last elemt of the array
+    NSNumber *numberOfEachLetterWrapper = [NSNumber numberWithInteger:currentCountofLetter];
+    [numberOfEachLetter addObject:numberOfEachLetterWrapper];
+    currentCountofLetter = 1;
     
     //Populate table
     [self.tableView reloadData];
     
     [super viewDidLoad];    
-}	
+}		
 
 - (void)viewDidUnload
 {
@@ -103,19 +154,20 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return [lettersinDictionary count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [[showsDictionary retrieveForPath:@"Data.Show"] count];
+    return [[numberOfEachLetter objectAtIndex:section] intValue];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Extract show dictionary
-    NSDictionary *show = [showsDictionary retrieveForPath:[NSString stringWithFormat:@"Data.Show.%d",indexPath.row]];
+    //Calculate next label to add
+    int *rowNumber =  ([[rowIndexOfeachLetter objectAtIndex:indexPath.section] intValue] + indexPath.row);
+    NSDictionary *show = [showsDictionary retrieveForPath:[NSString stringWithFormat:@"Data.Show.%d",rowNumber]];
     
     static NSString *CellIdentifier = @"show";
     
@@ -134,6 +186,15 @@
     return cell;
 }
 
+- (NSArray *) sectionIndexTitlesForTableView:(UITableView *)tableView{
+    //Return headers for the index
+    return lettersinDictionary;
+}
+
+- (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    //Return header for each section
+    return [lettersinDictionary objectAtIndex:section];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

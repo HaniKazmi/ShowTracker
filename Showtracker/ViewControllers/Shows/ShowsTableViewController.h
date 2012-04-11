@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 NSDictionary *showsDictionary;
+NSMutableArray *lettersinDictionary;
+NSMutableArray *numberOfEachLetter;
+NSMutableArray *rowIndexOfeachLetter;
 
 //Directory locations
 NSString const

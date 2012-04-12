@@ -125,25 +125,16 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <textField key="tableHeaderView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="9Bh-Rj-cVV">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="31"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="oXm-DN-XGS" id="pGa-4q-PEr"/>
-                            </connections>
-                        </textField>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="V7C-qi-QP0" style="IBUITableViewCellStyleDefault" id="dj5-wq-xPR">
-                                <rect key="frame" x="0.0" y="53" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="V7C-qi-QP0" style="IBUITableViewCellStyleDefault" id="dj5-wq-xPR">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V7C-qi-QP0">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -152,6 +143,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="Yoh-Ni-pY1" kind="push" identifier="seasonPush" id="v0d-Fo-F4G"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -166,9 +160,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="textBox" destination="9Bh-Rj-cVV" id="Rlj-w4-R43"/>
-                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="2453" y="169"/>
@@ -209,7 +200,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2860" y="170"/>
+            <point key="canvasLocation" x="2898" y="-114"/>
         </scene>
         <scene sceneID="7yc-NS-BJw">
             <objects>
@@ -241,6 +232,35 @@
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="2435" y="848"/>
+        </scene>
+        <scene sceneID="yrY-T9-KGk">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1rw-Jn-DhB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController storyboardIdentifier="slvc" title="Season List table view Controller" id="Yoh-Ni-pY1" customClass="SeasonListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="cI5-MC-pTk">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="8eu-jm-dqV">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Yoh-Ni-pY1" id="oxN-aw-b2O"/>
+                            <outlet property="delegate" destination="Yoh-Ni-pY1" id="CCb-5S-jup"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="pRo-Bh-EWX"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="2926" y="562"/>
         </scene>
         <scene sceneID="2a2-x5-OP0">
             <objects>
@@ -326,33 +346,6 @@
         <image name="Calendar@2x.png" width="60" height="60"/>
         <image name="list.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="AddShowsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddShowsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="AddShowsSearchDisplayController" candidateClass="UISearchDisplayController"/>
-            </relationships>
-        </class>
-        <class className="FavoriteTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FavoriteTableViewController.h"/>
-        </class>
-        <class className="SettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
-        </class>
-        <class className="ShowsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShowsTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="ShowsSearchBar" candidateClass="UISearchBar"/>
-                <relationship kind="outlet" name="textBox" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ToWatchTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ToWatchTableViewController.h"/>
-        </class>
-        <class className="UpcomingTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UpcomingTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

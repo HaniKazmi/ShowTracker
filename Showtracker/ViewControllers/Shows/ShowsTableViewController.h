@@ -13,15 +13,6 @@ NSMutableArray *lettersinDictionary;
 NSMutableArray *numberOfEachLetter;
 NSMutableArray *rowIndexOfeachLetter;
 
-//Directory locations
-NSString const
-*showsFile = @"shows.txt",
-*reminderFile = @"reminder.txt",
-*showsXMLDir = @"Cache/Shows",
-*episodesXMLDir = @"Cache/Episodes",
-*bannerDir = @"Banner",
-*episodesDir = @"Episode";
-
 @interface ShowsTableViewController : UITableViewController 
     
 

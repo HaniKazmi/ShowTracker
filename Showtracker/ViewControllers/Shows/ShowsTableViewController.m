@@ -9,6 +9,8 @@
 #import "ShowsTableViewController.h"
 #import "FileHandling.h"
 #import "XMLReader.h"
+#import "SeasonListTableViewController.h"
+#import "Constants.h"
 
 
 @implementation ShowsTableViewController
@@ -146,7 +148,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES; //(interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark - Table view data source
@@ -166,7 +168,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //Calculate next label to add
-    int *rowNumber =  ([[rowIndexOfeachLetter objectAtIndex:indexPath.section] intValue] + indexPath.row);
+    int rowNumber =  ([[rowIndexOfeachLetter objectAtIndex:indexPath.section] intValue] + indexPath.row);
     NSDictionary *show = [showsDictionary retrieveForPath:[NSString stringWithFormat:@"Data.Show.%d",rowNumber]];
     
     static NSString *CellIdentifier = @"show";
@@ -177,11 +179,15 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.textLabel.font = [UIFont boldSystemFontOfSize:20];
         cell.textLabel.numberOfLines = 2;  
-        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
     
     // Populate cell	
     cell.textLabel.text=[show objectForKey:@"SeriesName"];
+    
+    //Create Identifier
+    cell.tag = [[show objectForKey:@"id"] intValue];
     
     return cell;
 }
@@ -195,6 +201,7 @@
     //Return header for each section
     return [lettersinDictionary objectAtIndex:section];
 }
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -236,15 +243,18 @@
 
 #pragma mark - Table view delegate
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+{  
+    //Send show id
+    showID = ([tableView cellForRowAtIndexPath:indexPath].tag);
+    showName = ([tableView cellForRowAtIndexPath:indexPath].textLabel.text);
+    
+    //Load next view
+    [self performSegueWithIdentifier:@"seasonPush" sender:indexPath];
 }
 
 @end

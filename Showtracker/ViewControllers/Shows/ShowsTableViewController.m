@@ -32,6 +32,58 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+ -(void)collectInformationAboutDictionary
+{
+    lettersinDictionary = [[NSMutableArray alloc] init];
+    numberOfEachLetter = [[NSMutableArray alloc] init];
+    rowIndexOfeachLetter = [[NSMutableArray alloc] init];
+    int currentCountofLetter = 1;
+    int rowOfCurrentLetter = 0;
+    
+    
+
+    //Loop through and extract series names
+    for (NSDictionary *childShowsDictionary in [showsDictionary retrieveForPath:[NSString stringWithFormat:@"Data.Show"]]) {
+        
+        
+     //   childShowsDictionary = [showsDictionary retrieveForPath:[NSString stringWithFormat:@"Data.Show.%i",i]];
+        NSString *seriesName = [childShowsDictionary objectForKey:@"SeriesName"];
+        //Extract first character from name
+        seriesName =[seriesName substringToIndex:1];
+        
+        //Check if letter is in array
+        if (![lettersinDictionary containsObject:seriesName]) {
+            
+            //Keep count of position of first occurence of the letter
+            NSNumber *rowIndexOfEachLetterWrapper = [NSNumber numberWithInteger:rowOfCurrentLetter];
+            [rowIndexOfeachLetter addObject:rowIndexOfEachLetterWrapper];
+            rowOfCurrentLetter ++;
+            
+            
+            //If not in array, add letter and set the number of letters to one
+            [lettersinDictionary addObject: seriesName];
+            
+            //Skip above process on first loop, as letters haven't finished counting
+            if ([lettersinDictionary count] != 1) {
+                NSNumber *numberOfEachLetterWrapper = [NSNumber numberWithInteger:currentCountofLetter];
+                [numberOfEachLetter addObject:numberOfEachLetterWrapper];
+                currentCountofLetter = 1;
+            }
+        }
+        
+        //Increment counters if new letter not found
+        else {
+            currentCountofLetter ++; 
+            rowOfCurrentLetter ++;
+        }
+    }
+    
+    //As i = 0 was skipped, fill in the last elemt of the array
+    NSNumber *numberOfEachLetterWrapper = [NSNumber numberWithInteger:currentCountofLetter];
+    [numberOfEachLetter addObject:numberOfEachLetterWrapper];
+    currentCountofLetter = 1;
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad //Any additional setup after loading view
@@ -62,55 +114,8 @@
     	
     
     //Determine Number of letters for index
-    NSDictionary *childShowsDictionary;
-    lettersinDictionary = [[NSMutableArray alloc] init];
-    numberOfEachLetter = [[NSMutableArray alloc] init];
-    rowIndexOfeachLetter = [[NSMutableArray alloc] init];
-    int currentCountofLetter = 1;
-    int rowOfCurrentLetter = 0;
-    
-    
-    NSString *seriesName;
-    //Loop through and extract series names
-    for (int i = 0; i < [[showsDictionary retrieveForPath:@"Data.Show"] count]; i++) {
+    [self collectInformationAboutDictionary];
         
-        childShowsDictionary = [showsDictionary retrieveForPath:[NSString stringWithFormat:@"Data.Show.%i",i]];
-        seriesName = [childShowsDictionary objectForKey:@"SeriesName"];
-        //Extract first character from name
-        seriesName =[seriesName substringToIndex:1];
-        
-        //Check if letter is in array
-        if (![lettersinDictionary containsObject:seriesName]) {
-            
-            
-            //If not in array, add letter and set the number of letters to one
-            [lettersinDictionary addObject: seriesName];
-            
-            //Skip above process on first loop, as letters haven't finished counting
-            if (i != 0) {
-                NSNumber *numberOfEachLetterWrapper = [NSNumber numberWithInteger:currentCountofLetter];
-                [numberOfEachLetter addObject:numberOfEachLetterWrapper];
-                currentCountofLetter = 1;
-            }
-            
-            //Keep count of position of first occurence of the letter
-            NSNumber *rowIndexOfEachLetterWrapper = [NSNumber numberWithInteger:rowOfCurrentLetter];
-            [rowIndexOfeachLetter addObject:rowIndexOfEachLetterWrapper];
-            rowOfCurrentLetter ++;
-        }
-        
-        //Increment counters if new letter not found
-        else {
-            currentCountofLetter ++; 
-            rowOfCurrentLetter ++;
-        }
-    }
-    
-    //As i = 0 was skipped, fill in the last elemt of the array
-    NSNumber *numberOfEachLetterWrapper = [NSNumber numberWithInteger:currentCountofLetter];
-    [numberOfEachLetter addObject:numberOfEachLetterWrapper];
-    currentCountofLetter = 1;
-    
     //Populate table
     [self.tableView reloadData];
     
@@ -244,17 +249,23 @@
 #pragma mark - Table view delegate
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSLog(@"%@", [segue identifier]);
+    
+    if([[segue identifier] isEqualToString:@"seasonPush"]){
+    
+    //Instantiate View
+    SeasonListTableViewController *vc = segue.destinationViewController;
+    //Set ID information
+    vc.showID = [sender tag];
+    vc.showName = [[sender textLabel] text];
+    }
 
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {  
-    //Send show id
-    showID = ([tableView cellForRowAtIndexPath:indexPath].tag);
-    showName = ([tableView cellForRowAtIndexPath:indexPath].textLabel.text);
-    
     //Load next view
-    [self performSegueWithIdentifier:@"seasonPush" sender:indexPath];
+    [self performSegueWithIdentifier:@"seasonPush" sender:[self tableView:tableView cellForRowAtIndexPath:indexPath]];
 }
 
 @end

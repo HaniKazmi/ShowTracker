@@ -21,5 +21,8 @@ extern NSString * const episodesXMLDir;
 extern NSString * const bannerDir;
 extern NSString * const episodesDir;
 
+extern NSString * const addShowsURL;
+
+
 
 @end

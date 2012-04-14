@@ -15,4 +15,8 @@ NSString * const showsXMLDir = @"Cache/Shows";
 NSString * const episodesXMLDir = @"Cache/Episodes";
 NSString * const bannerDir = @"Banner";
 NSString * const episodesDir = @"Episode";
+
+
+NSString * const addShowsURL = @"http://www.thetvdb.com/api/GetSeries.php?seriesname=";
+
 @end

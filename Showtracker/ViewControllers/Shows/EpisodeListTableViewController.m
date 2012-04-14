@@ -1,20 +1,20 @@
 //
-//  SeasonListTableViewController.m
+//  EpisodeListTableViewController.m
 //  Showtracker
 //
-//  Created by Hani Kazmi on 11/04/2012.
+//  Created by Hani Kazmi on 12/04/2012.
 //  Copyright (c) 2012 Hani Kazmi. All rights reserved.
 //
 
-#import "SeasonListTableViewController.h"
 #import "EpisodeListTableViewController.h"
-#import "XMLReader.h"
 #import "Constants.h"
 
-@implementation SeasonListTableViewController
 
+@implementation EpisodeListTableViewController
+
+@synthesize seasonName;
 @synthesize showID;
-@synthesize showName;
+@synthesize episodeDictionary;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -37,18 +37,7 @@
 
 - (void)viewDidLoad
 {
-    //Set Navigation bar title
-    self.title = showName;
-
-    //Create path to [episodeID].txt
-    NSString *showIDString = [NSString stringWithFormat:@"%d", showID];
-    NSString *path = [docsDir stringByAppendingPathComponent:episodesDir];
-    path = [path stringByAppendingPathComponent:showIDString];  
-    path = [path stringByAppendingPathExtension:@"txt"];
-    
-    //Parse XML
-    NSData *xmlData = [NSData dataWithContentsOfFile:path];
-    seasonDictionary = [XMLReader dictionaryForXMLData:xmlData];
+    self.title = seasonName;
     
     [super viewDidLoad];
 
@@ -103,30 +92,44 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [[seasonDictionary retrieveForPath:@"Data"] count];
+    return [episodeDictionary count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{   
-    static NSString *CellIdentifier = @"Season";
+{
+    NSDictionary *episodeDataDictionary = [episodeDictionary objectAtIndex:indexPath.row];
+    
+    static NSString *CellIdentifier = @"Episode";
     
     //Cell settings
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         cell.textLabel.font = [UIFont boldSystemFontOfSize:20];
         cell.textLabel.numberOfLines = 2;  
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
+    //Format episode number to two digits
+    NSString *detailEpisodeText = [episodeDataDictionary objectForKey:[NSString stringWithFormat:@"EpisodeNumber"]];
+    
+    if ([detailEpisodeText length] == 1){
+        detailEpisodeText = [@"Episode 0" stringByAppendingString:detailEpisodeText];
+    }  
+    else {
+        detailEpisodeText = [@"Episode " stringByAppendingString:detailEpisodeText];  
+    }
+    
     // Populate cell	
-    cell.textLabel.text=[NSString stringWithFormat:@"Season %d", (indexPath.row + 1)];
+    cell.textLabel.text = [episodeDataDictionary objectForKey:[NSString stringWithFormat:@"EpisodeName"]];
+    cell.detailTextLabel.text = detailEpisodeText; 
     
     //Create Identifier
     cell.tag = (indexPath.row + 1);
     
     return cell;
+    
 }
 
 /*
@@ -170,19 +173,15 @@
 
 #pragma mark - Table view delegate
 
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    EpisodeListTableViewController *vc = segue.destinationViewController;
-    vc.showID = [sender tag];
-    vc.seasonName = [[sender textLabel] text];
-    vc.episodeDictionary = [[seasonDictionary retrieveForPath:@"Data"] objectForKey:[NSString stringWithFormat:@"Season_%d.Episode", [sender tag]]];
-    vc.episodeDictionary = [seasonDictionary retrieveForPath:[NSString stringWithFormat:@"Data.Season_%d.Episode", [sender tag]]];
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{  
-    //Load next view
-    [self performSegueWithIdentifier:@"EpisodeListPush" sender:[self tableView:tableView cellForRowAtIndexPath:indexPath]];
+{
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     */
 }
 
 @end

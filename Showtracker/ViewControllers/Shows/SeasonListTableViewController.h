@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-int showID;
-NSString *showName;
-NSDictionary *episodeDictionary;
+NSDictionary *seasonDictionary;
 
 
 @interface SeasonListTableViewController : UITableViewController
+
+@property (nonatomic) int showID;
+@property (nonatomic, copy) NSString *showName;
 
 @end

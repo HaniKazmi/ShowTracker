@@ -27,14 +27,15 @@
 		B95DBBBB152DFFDD00070302 /* FavoriteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95DBBBA152DFFDD00070302 /* FavoriteTableViewController.m */; };
 		B95DBBBE152DFFFF00070302 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95DBBBD152DFFFF00070302 /* SettingsViewController.m */; };
 		B97A63931535F1340030AC6D /* SeasonListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97A63921535F1340030AC6D /* SeasonListTableViewController.m */; };
+		B9863AB1153847BD007734F5 /* AddShowsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9863AB0153847BD007734F5 /* AddShowsTableViewController.m */; };
 		B98CCB8415333B3400D0ACB4 /* FileHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = B98CCB8115333B3400D0ACB4 /* FileHandling.m */; };
 		B98CCB8515333B3400D0ACB4 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B98CCB8315333B3400D0ACB4 /* XMLReader.m */; };
 		B992800D153443380009CDC2 /* Icon (1).png in Resources */ = {isa = PBXBuildFile; fileRef = B992800C153443380009CDC2 /* Icon (1).png */; };
 		B9928010153443400009CDC2 /* Icon@2x (1).png in Resources */ = {isa = PBXBuildFile; fileRef = B992800F153443400009CDC2 /* Icon@2x (1).png */; };
 		B9928012153443460009CDC2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9928011153443460009CDC2 /* Default@2x.png */; };
 		B9928014153443580009CDC2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B9928013153443580009CDC2 /* Default.png */; };
-		B99FDF9B152F1EB7004ADC59 /* AddShowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B99FDF9A152F1EB7004ADC59 /* AddShowsViewController.m */; };
 		B9D299741536DF7400BD41A6 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D299731536DF7400BD41A6 /* Constants.m */; };
+		B9D299771536EEFA00BD41A6 /* EpisodeListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D299761536EEFA00BD41A6 /* EpisodeListTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,8 @@
 		B95DBBBD152DFFFF00070302 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = SettingsViewController.m; path = ViewControllers/Settings/SettingsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B97A63911535F1340030AC6D /* SeasonListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeasonListTableViewController.h; path = ViewControllers/Shows/SeasonListTableViewController.h; sourceTree = "<group>"; };
 		B97A63921535F1340030AC6D /* SeasonListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeasonListTableViewController.m; path = ViewControllers/Shows/SeasonListTableViewController.m; sourceTree = "<group>"; };
+		B9863AAF153847BD007734F5 /* AddShowsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddShowsTableViewController.h; path = ViewControllers/AddShowsTableViewController.h; sourceTree = "<group>"; };
+		B9863AB0153847BD007734F5 /* AddShowsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddShowsTableViewController.m; path = ViewControllers/AddShowsTableViewController.m; sourceTree = "<group>"; };
 		B98CCB8015333B3400D0ACB4 /* FileHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileHandling.h; path = Resources/FileHandling.h; sourceTree = "<group>"; };
 		B98CCB8115333B3400D0ACB4 /* FileHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileHandling.m; path = Resources/FileHandling.m; sourceTree = "<group>"; };
 		B98CCB8215333B3400D0ACB4 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLReader.h; path = Resources/XMLReader.h; sourceTree = "<group>"; };
@@ -76,10 +79,10 @@
 		B992800F153443400009CDC2 /* Icon@2x (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x (1).png"; sourceTree = "<group>"; };
 		B9928011153443460009CDC2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B9928013153443580009CDC2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		B99FDF99152F1EB7004ADC59 /* AddShowsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddShowsViewController.h; path = ViewControllers/Shows/AddShowsViewController.h; sourceTree = "<group>"; };
-		B99FDF9A152F1EB7004ADC59 /* AddShowsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddShowsViewController.m; path = ViewControllers/Shows/AddShowsViewController.m; sourceTree = "<group>"; };
 		B9D299721536DF7400BD41A6 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Resources/Constants.h; sourceTree = "<group>"; };
 		B9D299731536DF7400BD41A6 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Resources/Constants.m; sourceTree = "<group>"; };
+		B9D299751536EEFA00BD41A6 /* EpisodeListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EpisodeListTableViewController.h; path = ViewControllers/Shows/EpisodeListTableViewController.h; sourceTree = "<group>"; };
+		B9D299761536EEFA00BD41A6 /* EpisodeListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EpisodeListTableViewController.m; path = ViewControllers/Shows/EpisodeListTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,12 +198,14 @@
 		B95DBBA5152DFE1000070302 /* Shows */ = {
 			isa = PBXGroup;
 			children = (
-				B99FDF99152F1EB7004ADC59 /* AddShowsViewController.h */,
-				B99FDF9A152F1EB7004ADC59 /* AddShowsViewController.m */,
 				B95DBBA6152DFE6B00070302 /* ShowsTableViewController.h */,
 				B95DBBA7152DFE6B00070302 /* ShowsTableViewController.m */,
+				B9D299751536EEFA00BD41A6 /* EpisodeListTableViewController.h */,
+				B9D299761536EEFA00BD41A6 /* EpisodeListTableViewController.m */,
 				B97A63911535F1340030AC6D /* SeasonListTableViewController.h */,
 				B97A63921535F1340030AC6D /* SeasonListTableViewController.m */,
+				B9863AAF153847BD007734F5 /* AddShowsTableViewController.h */,
+				B9863AB0153847BD007734F5 /* AddShowsTableViewController.m */,
 			);
 			name = Shows;
 			sourceTree = "<group>";
@@ -322,11 +327,12 @@
 				B95DBBB8152DFFB600070302 /* ToWatchTableViewController.m in Sources */,
 				B95DBBBB152DFFDD00070302 /* FavoriteTableViewController.m in Sources */,
 				B95DBBBE152DFFFF00070302 /* SettingsViewController.m in Sources */,
-				B99FDF9B152F1EB7004ADC59 /* AddShowsViewController.m in Sources */,
 				B98CCB8415333B3400D0ACB4 /* FileHandling.m in Sources */,
 				B98CCB8515333B3400D0ACB4 /* XMLReader.m in Sources */,
 				B97A63931535F1340030AC6D /* SeasonListTableViewController.m in Sources */,
 				B9D299741536DF7400BD41A6 /* Constants.m in Sources */,
+				B9D299771536EEFA00BD41A6 /* EpisodeListTableViewController.m in Sources */,
+				B9863AB1153847BD007734F5 /* AddShowsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

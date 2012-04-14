@@ -15,6 +15,7 @@
 
 @implementation ShowsTableViewController
 
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -34,14 +35,18 @@
 
  -(void)collectInformationAboutDictionary
 {
+    //Parse shows.txt
+    NSString *path = [docsDir stringByAppendingPathComponent:showsFile];
+    NSData *xmlData = [NSData dataWithContentsOfFile:path];
+    showsDictionary = [XMLReader dictionaryForXMLData:xmlData];
+    
+    
     lettersinDictionary = [[NSMutableArray alloc] init];
     numberOfEachLetter = [[NSMutableArray alloc] init];
     rowIndexOfeachLetter = [[NSMutableArray alloc] init];
     int currentCountofLetter = 1;
     int rowOfCurrentLetter = 0;
     
-    
-
     //Loop through and extract series names
     for (NSDictionary *childShowsDictionary in [showsDictionary retrieveForPath:[NSString stringWithFormat:@"Data.Show"]]) {
         
@@ -78,7 +83,7 @@
         }
     }
     
-    //As i = 0 was skipped, fill in the last elemt of the array
+    //As i = 0 was skipped, fill in the last element of the array
     NSNumber *numberOfEachLetterWrapper = [NSNumber numberWithInteger:currentCountofLetter];
     [numberOfEachLetter addObject:numberOfEachLetterWrapper];
     currentCountofLetter = 1;
@@ -107,17 +112,12 @@
     [FileHandling createFiles:showsFile];
     [FileHandling createFiles:reminderFile];
     
-    //Parse shows.txt
-    NSString *path = [docsDir stringByAppendingPathComponent:showsFile];
-    NSData *xmlData = [NSData dataWithContentsOfFile:path];
-    showsDictionary = [XMLReader dictionaryForXMLData:xmlData];
-    	
-    
     //Determine Number of letters for index
     [self collectInformationAboutDictionary];
         
     //Populate table
     [self.tableView reloadData];
+    shouldReloadData = NO;
     
     [super viewDidLoad];    
 }		
@@ -132,6 +132,11 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    if (shouldReloadData){
+        [self collectInformationAboutDictionary];
+        [self.tableView reloadData];
+        shouldReloadData = NO;
+    }
     [super viewWillAppear:animated];
 }
 

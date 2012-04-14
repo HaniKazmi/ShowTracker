@@ -14,6 +14,6 @@ NSDictionary *seasonDictionary;
 @interface SeasonListTableViewController : UITableViewController
 
 @property (nonatomic) int showID;
-@property (nonatomic, copy) NSString *showName;
+@property (nonatomic, retain) NSString *showName;
 
 @end

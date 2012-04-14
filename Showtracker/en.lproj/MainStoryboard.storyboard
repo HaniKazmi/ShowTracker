@@ -149,14 +149,14 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="oXm-DN-XGS" id="kVq-lS-R6K"/>
-                            <outlet property="delegate" destination="oXm-DN-XGS" id="8gb-eo-0Pk"/>
+                            <outlet property="dataSource" destination="oXm-DN-XGS" id="rxB-pu-VDq"/>
+                            <outlet property="delegate" destination="oXm-DN-XGS" id="J15-xr-yrn"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Shows" id="IGg-ty-2rm">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="not-Wl-daX">
                             <connections>
-                                <segue destination="Sdr-T5-OjD" kind="push" id="Y03-Yz-7vw"/>
+                                <segue destination="Sdr-T5-OjD" kind="push" identifier="addShowsPush" id="Y03-Yz-7vw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -380,35 +380,6 @@
         <image name="Calendar@2x.png" width="60" height="60"/>
         <image name="list.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="AddShowsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddShowsTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addShowsSearchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="EpisodeListTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EpisodeListTableViewController.h"/>
-        </class>
-        <class className="FavoriteTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FavoriteTableViewController.h"/>
-        </class>
-        <class className="SeasonListTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SeasonListTableViewController.h"/>
-        </class>
-        <class className="SettingsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
-        </class>
-        <class className="ShowsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShowsTableViewController.h"/>
-        </class>
-        <class className="ToWatchTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ToWatchTableViewController.h"/>
-        </class>
-        <class className="UpcomingTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UpcomingTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

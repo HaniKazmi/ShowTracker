@@ -30,6 +30,7 @@
 		B9863AB1153847BD007734F5 /* AddShowsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9863AB0153847BD007734F5 /* AddShowsTableViewController.m */; };
 		B98CCB8415333B3400D0ACB4 /* FileHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = B98CCB8115333B3400D0ACB4 /* FileHandling.m */; };
 		B98CCB8515333B3400D0ACB4 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B98CCB8315333B3400D0ACB4 /* XMLReader.m */; };
+		B98D7D53153996E600FE73BA /* XMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B98D7D52153996E600FE73BA /* XMLWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B992800D153443380009CDC2 /* Icon (1).png in Resources */ = {isa = PBXBuildFile; fileRef = B992800C153443380009CDC2 /* Icon (1).png */; };
 		B9928010153443400009CDC2 /* Icon@2x (1).png in Resources */ = {isa = PBXBuildFile; fileRef = B992800F153443400009CDC2 /* Icon@2x (1).png */; };
 		B9928012153443460009CDC2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9928011153443460009CDC2 /* Default@2x.png */; };
@@ -75,6 +76,8 @@
 		B98CCB8115333B3400D0ACB4 /* FileHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileHandling.m; path = Resources/FileHandling.m; sourceTree = "<group>"; };
 		B98CCB8215333B3400D0ACB4 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLReader.h; path = Resources/XMLReader.h; sourceTree = "<group>"; };
 		B98CCB8315333B3400D0ACB4 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLReader.m; path = Resources/XMLReader.m; sourceTree = "<group>"; };
+		B98D7D51153996E600FE73BA /* XMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLWriter.h; path = Resources/XMLWriter.h; sourceTree = "<group>"; };
+		B98D7D52153996E600FE73BA /* XMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLWriter.m; path = Resources/XMLWriter.m; sourceTree = "<group>"; };
 		B992800C153443380009CDC2 /* Icon (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon (1).png"; sourceTree = "<group>"; };
 		B992800F153443400009CDC2 /* Icon@2x (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x (1).png"; sourceTree = "<group>"; };
 		B9928011153443460009CDC2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 		B95DBB54152DE52500070302 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B98D7D51153996E600FE73BA /* XMLWriter.h */,
+				B98D7D52153996E600FE73BA /* XMLWriter.m */,
 				B98CCB8015333B3400D0ACB4 /* FileHandling.h */,
 				B98CCB8115333B3400D0ACB4 /* FileHandling.m */,
 				B98CCB8215333B3400D0ACB4 /* XMLReader.h */,
@@ -333,6 +338,7 @@
 				B9D299741536DF7400BD41A6 /* Constants.m in Sources */,
 				B9D299771536EEFA00BD41A6 /* EpisodeListTableViewController.m in Sources */,
 				B9863AB1153847BD007734F5 /* AddShowsTableViewController.m in Sources */,
+				B98D7D53153996E600FE73BA /* XMLWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,7 +414,9 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Showtracker/Showtracker-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "Showtracker/Showtracker-Info.plist";
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -419,7 +427,9 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Showtracker/Showtracker-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "Showtracker/Showtracker-Info.plist";
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

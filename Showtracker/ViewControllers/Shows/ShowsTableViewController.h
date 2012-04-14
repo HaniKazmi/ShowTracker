@@ -12,6 +12,7 @@ NSDictionary *showsDictionary;
 NSMutableArray *lettersinDictionary;
 NSMutableArray *numberOfEachLetter;
 NSMutableArray *rowIndexOfeachLetter;
+BOOL shouldReloadData;
 
 @interface ShowsTableViewController : UITableViewController 
     
